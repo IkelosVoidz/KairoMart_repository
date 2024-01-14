@@ -136,7 +136,6 @@
     <ClCompile Include="Concursant.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Origine.cpp" />
     <ClCompile Include="Personatge.cpp" />
     <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
