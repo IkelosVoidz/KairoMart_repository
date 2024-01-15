@@ -8,23 +8,23 @@ class Vehicle
 {
 public:
     Vehicle();
-    Vehicle(int id, string& _vehicle, double _maxVel, double _adherencia);
+    Vehicle(const string& nom, int maxVel, int adherencia);
   
+    void FesAccelerar();
+    void CanviarAccelerar(VehicleBehavior tipusVehile);
 
-    void accelerar(double increment);
-    void frenar(double decrement);
-    void girar(double graus);
-    void assignarAdaptacio(int adaptacio); //assigna l'adaptadcio depenent del personatge -> per ferho senzill farem que redueixi la velMaxima
-    const int getIdVehicle() const;
+    const string getNomVehicle() const;
 private:
 
-	int id;
-    string vehicle;
-    double adherencia;
-    double velocitatMaxima;
-    double resistenciaXoc;
-    double velocitatActual;
+	
+    string nomVehicle;
 
+    int adherencia;
+    int velocitatMaxima;
+    int resistenciaXoc;
+    int velocitatActual;
+    pair<int, int> direccio;
+    bool penalitzatPerXoc;
 };
 
 

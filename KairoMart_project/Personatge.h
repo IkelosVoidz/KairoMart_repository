@@ -8,11 +8,10 @@ class Personatge
 {
 public:
     Personatge();
-    Personatge(int _id, string& nom);
+    Personatge(const string& nom);
 
     const string getNom() const;
 private:
-    int id;
     string nom;
 };
 
