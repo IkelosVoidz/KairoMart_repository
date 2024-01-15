@@ -127,17 +127,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Accelerar.h" />
+    <ClInclude Include="AccelerarDerrepant.h" />
+    <ClInclude Include="AccelerarGirant.h" />
+    <ClInclude Include="Bigue.h" />
+    <ClInclude Include="Cavall.h" />
     <ClInclude Include="Concursant.h" />
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="Personatge.h" />
+    <ClInclude Include="Quadrigue.h" />
     <ClInclude Include="Vehicle.h" />
+    <ClInclude Include="ComportamentAccelerar.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Accelerar.cpp" />
+    <ClCompile Include="AccelerarDerrepant.cpp" />
+    <ClCompile Include="AccelerarGirant.cpp" />
+    <ClCompile Include="Bigue.cpp" />
+    <ClCompile Include="Cavall.cpp" />
     <ClCompile Include="Concursant.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Personatge.cpp" />
+    <ClCompile Include="Quadrigue.cpp" />
     <ClCompile Include="Vehicle.cpp" />
+    <ClCompile Include="ComportamentAccelerar.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

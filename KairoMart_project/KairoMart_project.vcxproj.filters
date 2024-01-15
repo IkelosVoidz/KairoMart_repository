@@ -27,6 +27,27 @@
     <ClInclude Include="Vehicle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ComportamentAccelerar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AccelerarDerrepant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Accelerar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AccelerarGirant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Quadrigue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bigue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cavall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jugador.cpp">
@@ -42,6 +63,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Concursant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComportamentAccelerar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AccelerarDerrepant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Accelerar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AccelerarGirant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Quadrigue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bigue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cavall.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
