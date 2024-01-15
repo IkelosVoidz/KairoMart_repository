@@ -8,7 +8,7 @@ class Vehicle
 {
 public:
     Vehicle();
-    Vehicle(const string& nom, int maxVel, int adherencia);
+    Vehicle(const string& nom, int maxVel, int adherencia, int resistencia);
   
     void FesAccelerar();
     void CambiarAccelerar(ComportamentAccelerar tipusAcceleracio);

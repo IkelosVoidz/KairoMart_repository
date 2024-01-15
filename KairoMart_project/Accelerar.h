@@ -8,7 +8,7 @@ using namespace std;
 class Accelerar :
     public ComportamentAccelerar
 {
-    void accelerar();
+    void accelerar() override;
 };
 
 

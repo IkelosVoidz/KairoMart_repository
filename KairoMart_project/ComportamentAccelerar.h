@@ -4,10 +4,9 @@
 
 using namespace std;
 
-
-class ComportamentAccelerar
+ class ComportamentAccelerar
 {
-	void accelerar();
+	virtual void accelerar() ;
 };
 
 

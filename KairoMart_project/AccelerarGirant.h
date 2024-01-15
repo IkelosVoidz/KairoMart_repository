@@ -9,7 +9,7 @@ using namespace std;
 class AccelerarGirant :
     public ComportamentAccelerar
 {
-    void accelerar();
+    void accelerar() override;
 };
 
 #endif // !ACCELERARGIRANT_H
