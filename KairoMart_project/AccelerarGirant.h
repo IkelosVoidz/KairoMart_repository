@@ -6,8 +6,7 @@ using namespace std;
 #include "ComportamentAccelerar.h"
 
 
-class AccelerarGirant :
-    public ComportamentAccelerar
+class AccelerarGirant : public ComportamentAccelerar
 {
     void accelerar() override;
 };

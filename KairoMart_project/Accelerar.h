@@ -5,8 +5,7 @@
 #include "ComportamentAccelerar.h"
 using namespace std;
 
-class Accelerar :
-    public ComportamentAccelerar
+class Accelerar : public ComportamentAccelerar
 {
     void accelerar() override;
 };
