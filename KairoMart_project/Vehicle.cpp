@@ -23,8 +23,11 @@ Vehicle::Vehicle(const string& nom, int maxVel, int adherenci) {
 	penalitzatPerXoc = false;
 }
 void Vehicle::FesAccelerar() {
+	vehicleBehavior.accelerar();
 }
-void Vehicle::CanviarAccelerar(VehicleBehavior tipusVehile) {
+void Vehicle::CambiarAccelerar(ComportamentAccelerar tipusVehile) {
+	tipusVehicle.accelerar();
+	vehicleBehvior = tipusVehile;
 
 }
 const string Vehicle::getNomVehicle() const {

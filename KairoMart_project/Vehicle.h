@@ -3,7 +3,7 @@
 #define VEHICLE_H
 #include <iostream>
 using namespace std;
-
+#include"ComportamentAccelerar.h"
 class Vehicle
 {
 public:
@@ -11,14 +11,14 @@ public:
     Vehicle(const string& nom, int maxVel, int adherencia);
   
     void FesAccelerar();
-    void CanviarAccelerar(VehicleBehavior tipusVehile);
+    void CambiarAccelerar(ComportamentAccelerar tipusAcceleracio);
 
     const string getNomVehicle() const;
 private:
 
 	
     string nomVehicle;
-
+    ComportamentAccelerar vehicleBehvior;
     int adherencia;
     int velocitatMaxima;
     int resistenciaXoc;
