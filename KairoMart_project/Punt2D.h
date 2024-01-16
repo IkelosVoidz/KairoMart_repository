@@ -1,6 +1,8 @@
+#pragma once
 #ifndef PUNT2D_H
 #define PUNT2D_H
 #include <iostream>
+#include <memory>
 using namespace std;
 
 class Punt2D { //guardat en en un fitxer Punt2D.h

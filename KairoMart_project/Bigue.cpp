@@ -1,4 +1,5 @@
 #include "Bigue.h"
+#include <memory>
 
 /*
 Bigue::Bigue(const std::string& nom, int maxVelocitat)

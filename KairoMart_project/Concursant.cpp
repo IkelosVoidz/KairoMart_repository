@@ -1,5 +1,6 @@
 #include "Concursant.h"
 #include "Cursa.h"
+#include <memory>
 Concursant::Concursant() {
 	id = 0;
 	nom = " ";

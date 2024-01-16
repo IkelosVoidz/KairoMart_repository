@@ -2,7 +2,9 @@
 #ifndef ACCELERAR_H
 #define ACCELERAR_H
 #include<iostream>
+#include <memory>
 #include "ComportamentAccelerar.h"
+
 using namespace std;
 
 class Accelerar : public ComportamentAccelerar

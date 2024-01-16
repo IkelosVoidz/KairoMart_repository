@@ -6,6 +6,7 @@ using namespace std;
 #include"ComportamentAccelerar.h"
 #include "Punt2D.h"
 #include "Personatge.h"
+#include <memory>
 class Vehicle
 {
 public:

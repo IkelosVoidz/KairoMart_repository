@@ -2,6 +2,7 @@
 #include <cmath>
 #include "Punt2D.h"
 #include <sstream>
+#include <memory>
 using namespace std;
 
 // Constructors

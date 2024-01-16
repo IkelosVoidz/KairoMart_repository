@@ -2,6 +2,7 @@
 #ifndef ACCELERARGIRANT_H
 #define ACCELERARGIRANT_H
 #include<iostream>
+#include <memory>
 using namespace std;
 #include "ComportamentAccelerar.h"
 

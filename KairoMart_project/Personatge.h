@@ -2,6 +2,7 @@
 #ifndef PERSONATGE_H
 #define PERSONATGE_H
 #include <iostream>
+#include <memory>
 using namespace std;
 
 class Personatge

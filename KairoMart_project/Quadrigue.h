@@ -4,6 +4,7 @@
 
 #include "Vehicle.h"
 #include <iostream>
+#include <memory>
 using namespace std;
 class Quadrigue :
     public Vehicle

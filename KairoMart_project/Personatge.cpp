@@ -1,4 +1,5 @@
 #include "Personatge.h"
+#include <memory>
 Personatge::Personatge() {
 	
 	nom = " ";

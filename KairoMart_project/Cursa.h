@@ -4,6 +4,7 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <memory>
 #include "Concursant.h"
 #include "Punt2D.h"
 

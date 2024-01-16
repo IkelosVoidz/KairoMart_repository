@@ -1,6 +1,6 @@
 #include "Quadrigue.h"
 
-
+#include <memory>
 
 /*Quadrigue::Quadrigue(const std::string& nom, int maxVelocitat)
     : Vehicle(nom, maxVelocitat, 5, 5) {}*/

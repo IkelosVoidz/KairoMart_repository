@@ -1,4 +1,5 @@
 #include "AccelerarGirant.h"
+#include <memory>
 
 Punt2D AccelerarGirant::accelerar(const Punt2D& dir, const Punt2D& dirAGirar, const Punt2D& pos, int vel)
 {

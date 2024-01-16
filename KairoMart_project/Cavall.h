@@ -5,6 +5,7 @@
 #include<iostream>
 using namespace std;
 #include "Vehicle.h"
+#include <memory>
 
 class Cavall :
     public Vehicle

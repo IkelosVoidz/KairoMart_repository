@@ -1,5 +1,6 @@
 #include "Vehicle.h"
 #include "Cursa.h"
+#include <memory>
 
 Vehicle::Vehicle() {
 

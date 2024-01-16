@@ -3,6 +3,7 @@
 #define ACCELERARDERREPANT_H
 #include "ComportamentAccelerar.h"
 #include<iostream>
+#include <memory>
 using namespace std;
 class AccelerarDerrepant : public ComportamentAccelerar
 {

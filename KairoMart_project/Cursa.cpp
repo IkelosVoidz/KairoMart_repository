@@ -1,6 +1,7 @@
 #include "Cursa.h"
 #include "string"
 #include <iomanip>
+#include <memory>
 
 Cursa* Cursa::instance = nullptr;
 
