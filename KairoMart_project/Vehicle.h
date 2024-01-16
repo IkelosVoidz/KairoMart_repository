@@ -4,31 +4,29 @@
 #include <iostream>
 using namespace std;
 #include"ComportamentAccelerar.h"
+#include "Punt2D.h"
 class Vehicle
 {
 public:
     Vehicle();
-    Vehicle(const string& nom, int maxVel, int adherencia, int resistencia);
+    Vehicle(const string& nom, int maxVel, int adherencia, int resistencia, int dirX, int dirY);
   
-    void FesAccelerar();
-    void CambiarAccelerar(ComportamentAccelerar tipusAcceleracio);
+    Punt2D FesAccelerar(const Punt2D& dir, const Punt2D& pos);
+    void CambiarAccelerar(ComportamentAccelerar* tipusAcceleracio);
 
     const string getNomVehicle() const;
 private:
 
 	
     string nomVehicle;
-    ComportamentAccelerar vehicleBehvior;
+    ComportamentAccelerar* vehicleBehaviour;
     int adherencia;
     int velocitatMaxima;
     int resistenciaXoc;
     int velocitatActual;
-    pair<int, int> direccio;
+    Punt2D direccio; // ??? no ens serveix no more 
     bool penalitzatPerXoc;
 };
-
-
-
 #endif // !VEHICLE_H
 
 

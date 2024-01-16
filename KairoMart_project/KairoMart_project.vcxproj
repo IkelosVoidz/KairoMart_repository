@@ -133,8 +133,10 @@
     <ClInclude Include="Bigue.h" />
     <ClInclude Include="Cavall.h" />
     <ClInclude Include="Concursant.h" />
+    <ClInclude Include="Cursa.h" />
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="Personatge.h" />
+    <ClInclude Include="Punt2D.h" />
     <ClInclude Include="Quadrigue.h" />
     <ClInclude Include="Vehicle.h" />
     <ClInclude Include="ComportamentAccelerar.h" />
@@ -146,9 +148,11 @@
     <ClCompile Include="Bigue.cpp" />
     <ClCompile Include="Cavall.cpp" />
     <ClCompile Include="Concursant.cpp" />
+    <ClCompile Include="Cursa.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Personatge.cpp" />
+    <ClCompile Include="Punt2D.cpp" />
     <ClCompile Include="Quadrigue.cpp" />
     <ClCompile Include="Vehicle.cpp" />
     <ClCompile Include="ComportamentAccelerar.cpp" />

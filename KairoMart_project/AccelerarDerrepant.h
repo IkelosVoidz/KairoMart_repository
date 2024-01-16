@@ -6,7 +6,8 @@
 using namespace std;
 class AccelerarDerrepant : public ComportamentAccelerar
 {
-    void accelerar() override;
+public:
+    Punt2D accelerar(const Punt2D& dir, const Punt2D& pos, int vel) override;
 };
 
 

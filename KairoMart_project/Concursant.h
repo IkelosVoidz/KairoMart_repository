@@ -6,27 +6,30 @@
 #include<iostream>
 #include "Vehicle.h"
 #include "Personatge.h"
+#include "Punt2D.h"
 
 using namespace std;
 class Concursant
 {
 public:
 	Concursant();
-	Concursant(const string& nom, int id);
-	void Conduir();
-	const string getNom() const;
-	const int getId() const;
-	const pair<int, int> getPosicio() const;
-	void seleccionarVehicle(const Vehicle& vec);
-	void seleccionarPersonatge(const Personatge& pers);
+	Concursant(const string& nom, int id, int x, int y);
+	~Concursant();
+	void Conduir(const Punt2D& dir);
+	string GetNom() const;
+	int GetId() const;
+	int GetVoltesFetes() const;
+	Punt2D GetPosicio() const;
+	void seleccionarVehicle(Vehicle* vec);
+	void seleccionarPersonatge(Personatge* pers);
 
 private:
 	string nom;
 	int id;
-	pair<int, int> posicio;
+	Punt2D posicio;
 	int voltesFetes;
-	Vehicle vehicleSeleccionat;
-	Personatge personatgeSeleccionat;
+	Vehicle* vehicleSeleccionat;
+	Personatge* personatgeSeleccionat;
 };
 
 #endif

@@ -48,6 +48,12 @@
     <ClInclude Include="Cavall.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Cursa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Punt2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jugador.cpp">
@@ -84,6 +90,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Cavall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cursa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Punt2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

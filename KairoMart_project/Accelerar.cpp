@@ -1,6 +1,6 @@
 #include "Accelerar.h"
 
-void Accelerar::accelerar()
+Punt2D Accelerar::accelerar(const Punt2D& dir, const Punt2D& pos, int vel)
 {
 	//accelera endavant
 }
