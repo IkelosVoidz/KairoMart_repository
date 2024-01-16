@@ -9,7 +9,7 @@ using namespace std;
 class AccelerarGirant : public ComportamentAccelerar
 {
 public:
-    Punt2D accelerar(const Punt2D& dir, const Punt2D& pos, int vel) override;
+    Punt2D accelerar(const Punt2D& dir, const Punt2D& dirAGirar, const Punt2D& pos, int vel) override;
 };
 
 #endif // !ACCELERARGIRANT_H

@@ -32,7 +32,7 @@ Punt2D Vehicle::FesAccelerar(const Punt2D& dir, const Punt2D& pos)
 		if (velocitatActual - 1 > 0) velocitatActual--;
 	}
 
-	Punt2D nouPunt = vehicleBehaviour->accelerar(dir, pos , velocitatActual);
+	Punt2D nouPunt = vehicleBehaviour->accelerar(direccio, dir, pos, velocitatActual);
 
 	if (Cursa::GetInstance()->EsTransitable(nouPunt)) {
 		Vehicle* vehicleColisionat;
