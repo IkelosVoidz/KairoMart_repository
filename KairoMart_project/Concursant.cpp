@@ -101,7 +101,7 @@ void Concursant::Conduir(const Punt2D& dir)
 		if (newPos.get_x() >= meta[0].get_x() and posicio.get_x() < meta[0].get_x()) {
 			voltesFetes++;
 		}
-		else if (newPos.get_x() <= meta[0].get_x() and posicio.get_x() > meta[0].get_x()) {
+		else if (newPos.get_x() < meta[0].get_x() and posicio.get_x() >= meta[0].get_x()) {
 			voltesFetes--;
 		}
 

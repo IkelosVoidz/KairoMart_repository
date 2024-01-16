@@ -36,15 +36,17 @@ int main()
 
 	bool fi = false;
 
-	cout << "1- Inscriure Concursant" << endl;
+	cout << endl << "1- Inscriure Concursant" << endl;
 	cout << "2- Moure Vehicle a la Cursa" << endl;
 	cout << "3- Mostrar situacio actual Cursa" << endl;
 	cout << "0- Sortir Programa" << endl;
-	cout << "Escull Opcio:" << endl;
+	
+	int opcio;
+	cout << "Escull Opcio: "; cin >> opcio;
 
 	while (not fi) {
-		int opcio;
-		cin >> opcio;
+		
+		
 
 		switch (opcio)
 		{
@@ -70,7 +72,7 @@ int main()
 		cout << "2- Moure Vehicle a la Cursa" << endl;
 		cout << "3- Mostrar situacio actual Cursa" << endl;
 		cout << "0- Sortir Programa" << endl;
-		cout << "Escull Opcio:" << endl;
+		cout << "Escull Opcio: "; cin >> opcio;
 	}
 	return 0;
 }
@@ -93,7 +95,7 @@ void InscriureConcursant(const vector<Personatge>& pers , const vector<Vehicle>&
 
 	Concursant nouC = Concursant(nom,0,start.first);
 
-	cout << "Escull Personatge:\n" << endl;
+	cout << "Escull Personatge:" << endl;
 
 	for (int i = 0; i < pers.size(); i++)
 	{
