@@ -1,5 +1,11 @@
 Respecte al programa:
 
+IMPORTANT!! Hem fet molt poc control de eror de input es a dir si les posibles opcions son 1 2 3 o 0 i es fica un 4 petara el programa. No ens ha donat temps de implementar-ho i tampoc era 
+el focus de la practica.
+
+
+FUNCIONAMENT:
+
 El nostre programa simula una cursa de forma mitjanament real . Després de definir com a mínim un concursant amb el seu vehicle  i personatge es pot aplicar un Input a cada vehicle 
 que es mou n caselles depenent de la seva velocitat actual, que augmenta en 1 unitat cada torn que s’acceleri en la mateixa direcció i disminueix en 1 cada torn que es canviï de direcció.
 

@@ -192,7 +192,7 @@ void MoureVehicle(int &nConcursantsGuanyadors)
 	}
 
 	c->Conduir(dirNova);
-	Cursa::GetInstance()->MostrarCircuit(c->GetPosicio());
+	Cursa::GetInstance()->MostrarCircuit();
 
 	// mirar si ha acabat la carrera
 	if (c->GetVoltesFetes() >= Cursa::GetInstance()->GetVoltes()) {
@@ -225,11 +225,6 @@ void MostrarClassificacio() {
 	cout << endl;
 }
 int IniciCursa() {
-
-	string path;
-	cout << "Indica'm el path local del fitxer de configuracio del circuit (si no s'ha tocat la carpeta hauria de ser 'circuit.txt'" << endl;
-	//cin >> path;
-
 	ifstream file("circuit.txt");
 	if (not file.is_open()) {
 		cout << "No s'ha pogut trobar el fitxer de configuracio del circuit" << endl;
@@ -280,9 +275,9 @@ int IniciCursa() {
 				}
 
 				circuit[x][y] = stoi(buffer);
-				cout << buffer << " ";
+				//cout << buffer << " ";
 			}
-			cout << endl;
+			//cout << endl;
 		}
 
 		file >> buffer;
@@ -298,7 +293,7 @@ int IniciCursa() {
 			file >> y;
 
 			meta.push_back(Punt2D(x, y));
-			cout << meta[j].get_x() << " " << meta[j].get_y() << endl;
+			//cout << meta[j].get_x() << " " << meta[j].get_y() << endl;
 		}
 
 
