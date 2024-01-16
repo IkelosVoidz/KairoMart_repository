@@ -27,7 +27,7 @@ Concursant::~Concursant()
 void Concursant::Conduir(const Punt2D& dir)
 {
 	Punt2D newPos = vehicleSeleccionat->FesAccelerar(dir, posicio);
-	Cursa* instance = Cursa::GetInstance();
+	Cursa* instanciaCursa = Cursa::GetInstance();
 
 	if (newPos.es_igual(Punt2D())) {
 		
@@ -35,12 +35,22 @@ void Concursant::Conduir(const Punt2D& dir)
 		return;
 	}
 	else {
-		posicio = newPos;
+		// mirar si ha creuat la meta i sumar/restar les voltes actuals en conseqüència.
+		vector<Punt2D> meta = instanciaCursa->GetMeta();
 
-		//mirar si ha creuat de volta, 
-		// si ha creuat sumar voltes 
-		// i mirar si ha arribat a les voltes finals 
-		// i indicar de alguna forma que ha acabat la carrera
+		if (newPos.get_x() >= meta[0].get_x() and posicio.get_x() < meta[0].get_x()) {
+			voltesFetes++;
+		}
+		else if (newPos.get_x() <= meta[0].get_x() and posicio.get_x() > meta[0].get_x()) {
+			voltesFetes--;
+		}
+
+		// mirar si ha acabat la carrera
+		if (voltesFetes >= instanciaCursa.getVoltes()) {
+			cout << "He acabado la carrera hehe";
+		}
+
+		posicio = newPos;
 	}
 }
 
