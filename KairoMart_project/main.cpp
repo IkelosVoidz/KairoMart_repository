@@ -193,7 +193,7 @@ void MostrarClassificacio() {
 		return;
 	}
 
-
+	Cursa::GetInstance()->MostraClassificacio();
 }
 int IniciCursa() {
 

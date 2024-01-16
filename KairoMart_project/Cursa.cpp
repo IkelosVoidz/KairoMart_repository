@@ -210,3 +210,14 @@ void Cursa::MostraConcursants() const
 	}
 }
 
+void Cursa::MostraClassificacio() const
+{
+	int i = 0;
+	for (auto it : participants) {
+		cout << i << "- " << it.second.GetNom() 
+			<< ": POSICIO:" << it.second.GetPosicio() 
+			<< ", VOLTES: " << it.second.GetVoltesFetes() << endl;
+		i++;
+	}
+}
+

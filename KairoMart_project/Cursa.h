@@ -42,6 +42,7 @@ public:
 	vector <Punt2D> GetMeta() const;
 	int GetVoltes() const;
 	void MostraConcursants() const;
+	void MostraClassificacio() const;
 
 };
 
