@@ -8,6 +8,7 @@ using namespace std;
 class Quadrigue :
     public Vehicle
 {
+public:
     Quadrigue(const string& nom, int maxVelocitat);
 };
 

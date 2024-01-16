@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include "Punt2D.h"
+#include <sstream>
 using namespace std;
 
 // Constructors
@@ -59,14 +60,22 @@ using namespace std;
      cin >> x >> y;
   }
 
-  bool Punt2D::operator<(const Punt2D& p)
+  bool Punt2D::operator<(const Punt2D& p) const
   {
       bool menor = x < p.x;
       if (not menor) menor = y < p.y;
       return menor;
   }
 
-  bool Punt2D::operator==(const Punt2D& p)
+  bool Punt2D::operator==(const Punt2D& p) const
   {
       return es_igual(p);
+  }
+
+  ostream& operator<<(ostream& os, const Punt2D& p)
+  {
+      stringstream ss;
+
+      ss << "(" << p.get_x() << "," << p.get_y() << ")";
+      return os << ss.str();
   }

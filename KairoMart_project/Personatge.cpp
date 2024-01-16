@@ -9,4 +9,4 @@ Personatge::Personatge(const string& _nom) {
 
 }
 
-const string Personatge::getNom() const { return nom; }
+const string Personatge::GetNom() const { return nom; }

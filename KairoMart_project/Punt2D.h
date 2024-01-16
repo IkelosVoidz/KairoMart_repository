@@ -32,8 +32,9 @@ public:
   void llegir();
   //Pre:--; Post: el punt Žs el llegit de teclat
 
-  bool operator<(const Punt2D& p);
-  bool operator==(const Punt2D& p);
+  bool operator<(const Punt2D& p) const;
+  bool operator==(const Punt2D& p) const;
+  friend ostream& operator<<(ostream& os, const Punt2D& p); ///< @pre --- @post operador de sortida 
 
 private:
   double x, y; // atributs (usem coordenades cartesianes)

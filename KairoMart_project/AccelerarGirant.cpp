@@ -10,5 +10,7 @@ Punt2D AccelerarGirant::accelerar(const Punt2D& dir, const Punt2D& dirAGirar, co
 
 	//gira 90 graus i accelera fins l'altra meitat de vel
 	int velFinal = vel - velMitja;
+
+	cout << "Gir normal" << endl;
 	return Punt2D(puntMig.get_x() + velFinal * dirAGirar.get_x(), puntMig.get_y() + velFinal * dirAGirar.get_y());
 }

@@ -44,8 +44,8 @@ Punt2D Vehicle::FesAccelerar(const Punt2D& dir, const Punt2D& pos)
 	Punt2D nouPunt = vehicleBehaviour->accelerar(direccio, dir, pos, velocitatActual);
 
 	if (Cursa::GetInstance()->EsTransitable(nouPunt)) {
-		Vehicle* vehicleColisionat;
-		if (Cursa::GetInstance()->NoColisiona(nouPunt,vehicleColisionat)) {
+		shared_ptr<Vehicle> vehicleColisionat;
+		if (not Cursa::GetInstance()->HiHaColisio(nouPunt,vehicleColisionat)) {
 			direccio = dir;
 			return nouPunt;
 		}
@@ -57,11 +57,26 @@ Punt2D Vehicle::FesAccelerar(const Punt2D& dir, const Punt2D& pos)
 
 	return Punt2D();
 }
-void Vehicle::CambiarAccelerar(ComportamentAccelerar* tipusVehile) {
-	vehicleBehaviour = tipusVehile;
+void Vehicle::CambiarAccelerar(shared_ptr<ComportamentAccelerar> newBehaviour) {
+	vehicleBehaviour = newBehaviour;
 }
-const string Vehicle::getNomVehicle() const {
+const string Vehicle::GetNomVehicle() const {
 		return nomVehicle;
+}
+
+int Vehicle::GetVelocitat() const
+{
+	return velocitatActual;
+}
+
+Punt2D Vehicle::GetDireccio() const
+{
+	return direccio;
+}
+
+void Vehicle::SetDireccio(const Punt2D& dir)
+{
+	direccio = dir;
 }
 
 void Vehicle::penalitzar()

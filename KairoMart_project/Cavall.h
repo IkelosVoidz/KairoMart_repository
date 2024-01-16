@@ -9,6 +9,7 @@ using namespace std;
 class Cavall :
     public Vehicle
 {
+public:
     Cavall(const string& nom, int maxVelocitat);
 };
 

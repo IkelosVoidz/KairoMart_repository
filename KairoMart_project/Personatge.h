@@ -10,7 +10,7 @@ public:
     Personatge();
     Personatge(const string& nom);
 
-    const string getNom() const;
+    const string GetNom() const;
 private:
     string nom;
 };

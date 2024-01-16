@@ -7,6 +7,7 @@
 using namespace std;
 class Bigue:public Vehicle
 {
+public:
     Bigue(const std::string& nom, int maxVelocitat);
 };
 
