@@ -27,6 +27,13 @@ Vehicle::Vehicle(const string& nom, int maxVel, int adherenci, int resistencia ,
 
 Punt2D Vehicle::FesAccelerar(const Punt2D& dir, const Punt2D& pos)
 {
+	if (penalitzatPerXoc) {
+		cout << "El vehicle esta penalitzat per un xoc" << endl;
+		tornsRestantsPenalitzacio--;
+
+		if (tornsRestantsPenalitzacio == 0) penalitzatPerXoc = false;
+	}
+
 	if (velocitatActual < velocitatMaxima) velocitatActual++;
 	if (not direccio.es_igual(dir)) {
 		if (velocitatActual - 1 > 0) velocitatActual--;
@@ -41,7 +48,8 @@ Punt2D Vehicle::FesAccelerar(const Punt2D& dir, const Punt2D& pos)
 			return nouPunt;
 		}
 		else {
-			
+			penalitzar();
+			vehicleColisionat->penalitzar();
 		}
 	}
 
@@ -52,4 +60,11 @@ void Vehicle::CambiarAccelerar(ComportamentAccelerar* tipusVehile) {
 }
 const string Vehicle::getNomVehicle() const {
 		return nomVehicle;
+}
+
+void Vehicle::penalitzar()
+{
+	penalitzatPerXoc = true;
+	tornsRestantsPenalitzacio = resistenciaXoc;
+	velocitatActual = 0;
 }

@@ -20,6 +20,8 @@ public:
 	int GetId() const;
 	int GetVoltesFetes() const;
 	Punt2D GetPosicio() const;
+	Vehicle* GetVehicle() const;
+	Personatge* GetPersonatge() const;
 	void seleccionarVehicle(Vehicle* vec);
 	void seleccionarPersonatge(Personatge* pers);
 

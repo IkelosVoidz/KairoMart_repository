@@ -15,7 +15,7 @@ Cursa* Cursa::GetInstance()
 
 void Cursa::AfegirConcursant(const Concursant& c)
 {
-	participants.insert(c);
+	participants.insert({ c.GetPosicio() , c });
 }
 
 void Cursa::InicialitzarCircuit(const vector<vector<int>>& circ)
@@ -34,10 +34,19 @@ void Cursa::MostrarCircuit() const
 
 bool Cursa::EsTransitable(const Punt2D& p) const
 {
+	if ((p.get_x() < 0 or p.get_x() >= sizeX) or (p.get_y() < 0 or p.get_y() >= sizeY)) return false;
+
 	return circuit[p.get_x()][p.get_y()] == 0;
 }
 
-bool Cursa::NoColisiona(const Punt2D&, Vehicle *& colisionat) const
+bool Cursa::NoColisiona(const Punt2D& p, Vehicle *& colisionat) const
 {
-	return false;
+	bool colisiona = false;
+	map<Punt2D, Concursant>::const_iterator it = participants.find(p);
+	if (it != participants.end()) {
+		colisiona = true;
+		colisionat = it->second.GetVehicle();
+	}
+
+	return colisiona;
 }

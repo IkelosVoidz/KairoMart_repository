@@ -59,6 +59,16 @@ Punt2D Concursant::GetPosicio() const
 	return posicio;
 }
 
+Vehicle* Concursant::GetVehicle() const
+{
+	return vehicleSeleccionat;
+}
+
+Personatge* Concursant::GetPersonatge() const
+{
+	return personatgeSeleccionat;
+}
+
 void Concursant::seleccionarVehicle(Vehicle* vec)
 {
 	vehicleSeleccionat = vec;

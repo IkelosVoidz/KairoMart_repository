@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <set>
+#include <map>
 #include <vector>
 #include "Concursant.h"
 #include "Punt2D.h"
@@ -13,9 +13,10 @@ private:
 	Cursa();
 	static Cursa* instance;
 
-
+	int sizeX;
+	int sizeY;
 	int voltes;
-	set<Concursant> participants;
+	map<Punt2D,Concursant> participants;
 	vector <vector<int>> circuit; //0 es circuit 1 es limit
 	vector <Punt2D> casellesInicials;
 	

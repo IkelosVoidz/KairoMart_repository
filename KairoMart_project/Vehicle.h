@@ -18,11 +18,13 @@ public:
 private:
 
 	
+    void penalitzar();
     string nomVehicle;
     ComportamentAccelerar* vehicleBehaviour;
     int adherencia;
     int velocitatMaxima;
     int resistenciaXoc;
+    int tornsRestantsPenalitzacio;
     int velocitatActual;
     Punt2D direccio; // ??? no ens serveix no more 
     bool penalitzatPerXoc;
