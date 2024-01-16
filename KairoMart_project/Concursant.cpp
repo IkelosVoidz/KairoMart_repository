@@ -156,3 +156,8 @@ void Concursant::SeleccionarPersonatge(shared_ptr<Personatge> pers)
 {
 	personatgeSeleccionat = pers;
 }
+
+bool Concursant::EstaPenalitzat()
+{
+	return vehicleSeleccionat->EstaPenalitzat();
+}

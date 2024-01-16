@@ -15,13 +15,13 @@ Vehicle::Vehicle() {
 	tornsRestantsPenalitzacio = 0;
 
 }
-Vehicle::Vehicle(const string& nom, int maxVel, int adherenci, int resistencia , int dirX , int dirY) {
+Vehicle::Vehicle(const string& nom, int maxVel, int adherenci, int resistencia) {
 	nomVehicle = nom;
 	adherencia = adherenci;
 	velocitatMaxima = maxVel;
 	velocitatActual = 0;
 	resistenciaXoc = resistencia;
-	direccio = Punt2D(dirX, dirY);
+	direccio = Punt2D();
 	penalitzatPerXoc = false;
 	vehicleBehaviour = nullptr;
 	tornsRestantsPenalitzacio = 0;
@@ -29,13 +29,6 @@ Vehicle::Vehicle(const string& nom, int maxVel, int adherenci, int resistencia ,
 
 Punt2D Vehicle::FesAccelerar(const Punt2D& dir, const Punt2D& pos)
 {
-	if (penalitzatPerXoc) {
-		cout << "El vehicle esta penalitzat per un xoc" << endl;
-		tornsRestantsPenalitzacio--;
-
-		if (tornsRestantsPenalitzacio == 0) penalitzatPerXoc = false;
-	}
-
 	if (velocitatActual < velocitatMaxima) velocitatActual++;
 	if (not direccio.es_igual(dir)) {
 		if (velocitatActual - 1 > 0) velocitatActual--;
@@ -49,7 +42,10 @@ Punt2D Vehicle::FesAccelerar(const Punt2D& dir, const Punt2D& pos)
 			direccio = dir;
 			return nouPunt;
 		}
+
 		else {
+
+			cout << "Ostres, hi ha hagut una colisio!, Els dos vehicles queden penalitzats" << endl;
 			penalitzar();
 			vehicleColisionat->penalitzar();
 		}
@@ -77,6 +73,19 @@ Punt2D Vehicle::GetDireccio() const
 void Vehicle::SetDireccio(const Punt2D& dir)
 {
 	direccio = dir;
+}
+
+bool Vehicle::EstaPenalitzat()
+{
+	bool penalitzacio = false;
+	if (penalitzatPerXoc) {
+		penalitzacio = true;
+		cout << "El vehicle esta penalitzat per un xoc durant " << tornsRestantsPenalitzacio << " Torns restants, inclos aquest" << endl;
+		tornsRestantsPenalitzacio--;
+
+		if (tornsRestantsPenalitzacio == 0) penalitzatPerXoc = false;
+	}
+	return penalitzacio;
 }
 
 void Vehicle::penalitzar()

@@ -10,7 +10,7 @@ class Cavall :
     public Vehicle
 {
 public:
-    Cavall(const string& nom, int maxVelocitat);
+    Cavall(const string& nom, int maxVel, int adherenci, int resistencia);
 };
 
 

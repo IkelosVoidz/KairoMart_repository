@@ -38,7 +38,7 @@ public:
 	void MostrarCircuit() const;
 	void MostrarCircuit(const Punt2D& jugadorConcret) const;
 	bool EsTransitable(const Punt2D& p ) const;
-	bool HiHaColisio(const Punt2D& p, shared_ptr<Vehicle> colisionat) const;
+	bool HiHaColisio(const Punt2D& p, shared_ptr<Vehicle>& colisionat) const;
 	vector <Punt2D> GetMeta() const;
 	int GetVoltes() const;
 	void MostraConcursants() const;

@@ -8,7 +8,7 @@ using namespace std;
 class Bigue:public Vehicle
 {
 public:
-    Bigue(const std::string& nom, int maxVelocitat);
+    Bigue(const string& nom, int maxVel, int adherenci, int resistencia);
 };
 
 

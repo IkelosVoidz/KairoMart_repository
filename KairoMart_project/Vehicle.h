@@ -10,7 +10,7 @@ class Vehicle
 {
 public:
     Vehicle();
-    Vehicle(const string& nom, int maxVel, int adherencia, int resistencia, int dirX, int dirY);
+    Vehicle(const string& nom, int maxVel, int adherenci, int resistencia);
   
     Punt2D FesAccelerar(const Punt2D& dir, const Punt2D& pos);
     void CambiarAccelerar(shared_ptr<ComportamentAccelerar> newBehaviour);
@@ -19,6 +19,7 @@ public:
     int GetVelocitat() const;
     Punt2D GetDireccio() const;
     void SetDireccio(const Punt2D& dir);
+    bool EstaPenalitzat();
 protected:
 
 	

@@ -5,8 +5,10 @@ Bigue::Bigue(const std::string& nom, int maxVelocitat)
     : Vehicle(nom, maxVelocitat, 3, 10) {}
 */
 
-Bigue::Bigue(const std::string& nom, int maxVelocitat)
+Bigue::Bigue(const string& nom, int maxVel, int adherenci, int resistencia)
 {
     nomVehicle = nom;
-    velocitatMaxima = maxVelocitat;
+    velocitatMaxima = maxVel;
+    adherencia = adherenci;
+    resistenciaXoc = resistencia;
 }

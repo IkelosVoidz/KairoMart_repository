@@ -31,6 +31,7 @@ public:
 	shared_ptr<Personatge> GetPersonatge() const;
 	void SeleccionarVehicle(shared_ptr<Vehicle> vec);
 	void SeleccionarPersonatge(shared_ptr<Personatge> pers);
+	bool EstaPenalitzat();
 	
 
 private:

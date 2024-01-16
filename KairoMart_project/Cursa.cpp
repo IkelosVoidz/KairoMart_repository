@@ -30,13 +30,15 @@ pair<Punt2D,Punt2D> Cursa::GetAvaliableStartPosAndDirection()
 	//considerem que els circuits sempre seran clock wise
 
 	Punt2D dir;
+	shared_ptr<Vehicle> unused;
 
 	if (metaVertical) {
 		for (Punt2D p : meta)
 		{
 			dir = Punt2D(-1, 0);
 			p.moure(dir);
-			if (not HiHaColisio(p, shared_ptr<Vehicle>())) {
+			
+			if (not HiHaColisio(p, unused)) {
 				return pair< Punt2D, Punt2D>({p , dir,});
 			}
 		}
@@ -46,7 +48,7 @@ pair<Punt2D,Punt2D> Cursa::GetAvaliableStartPosAndDirection()
 		{
 			dir = Punt2D(0, -1);
 			p.moure(dir);
-			if (not HiHaColisio(p, shared_ptr<Vehicle>())) {
+			if (not HiHaColisio(p, unused)) {
 				return pair< Punt2D, Punt2D>({ p , dir, });
 			}
 		}
@@ -174,7 +176,7 @@ bool Cursa::EsTransitable(const Punt2D& p) const
 	return circuit[(int)p.get_x()][(int)p.get_y()] == 0;
 }
 
-bool Cursa::HiHaColisio(const Punt2D& p, shared_ptr<Vehicle> colisionat) const
+bool Cursa::HiHaColisio(const Punt2D& p, shared_ptr<Vehicle>& colisionat) const
 {
 	bool colisiona = false;
 	

@@ -5,8 +5,10 @@
 /*Quadrigue::Quadrigue(const std::string& nom, int maxVelocitat)
     : Vehicle(nom, maxVelocitat, 5, 5) {}*/
 
-Quadrigue::Quadrigue(const string& nom, int maxVelocitat)
+Quadrigue::Quadrigue(const string& nom, int maxVel, int adherenci, int resistencia)
 {
     nomVehicle = nom;
-    velocitatMaxima = maxVelocitat;
+    velocitatMaxima = maxVel;
+    adherencia = adherenci;
+    resistenciaXoc = resistencia;
 }

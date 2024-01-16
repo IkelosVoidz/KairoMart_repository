@@ -29,9 +29,9 @@ int main()
 	characters.push_back(Personatge("Peach"));
 	characters.push_back(Personatge("Bowser"));
 
-	vehicles.push_back(Cavall("Cavall(Rocinante)", 1));
-	vehicles.push_back(Bigue("Bigue(Motorola)", 2));
-	vehicles.push_back(Quadrigue("Quadrigue(RayoMcQueen)", 3));
+	vehicles.push_back(Cavall("Cavall(Rocinante)", 1,0,2));
+	vehicles.push_back(Bigue("Bigue(Motorola)", 2,0,1));
+	vehicles.push_back(Quadrigue("Quadrigue(RayoMcQueen)", 3,0,1));
 
 
 	bool fi = false;
@@ -151,6 +151,11 @@ void MoureVehicle()
 	}
 
 	Cursa::GetInstance()->MostrarCircuit(c->GetPosicio());
+	
+
+	if (c->EstaPenalitzat()) {
+		return;
+	}
 
 	int opcio;
 	cout << "En quina direccio et vols moure (tingues en conte que no pots atravessar pareds i que si canvies de direccio perds velocitat i has de fer un gir)" << endl;

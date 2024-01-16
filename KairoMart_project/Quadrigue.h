@@ -9,7 +9,7 @@ class Quadrigue :
     public Vehicle
 {
 public:
-    Quadrigue(const string& nom, int maxVelocitat);
+    Quadrigue(const string& nom, int maxVel, int adherenci, int resistencia);
 };
 
 #endif // !QUADRIGUE_H
