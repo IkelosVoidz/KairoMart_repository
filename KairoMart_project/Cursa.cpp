@@ -56,3 +56,8 @@ vector<Punt2D> Cursa::GetMeta() const
 {
 	return meta;
 }
+
+int Cursa::GetVoltes() const
+{
+	return voltes;
+}

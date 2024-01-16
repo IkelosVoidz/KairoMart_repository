@@ -34,6 +34,7 @@ public:
 	bool EsTransitable(const Punt2D& p ) const;
 	bool NoColisiona(const Punt2D& p, Vehicle*& colisionat) const;
 	vector <Punt2D> GetMeta() const;
+	int GetVoltes() const;
 
 };
 
