@@ -135,7 +135,7 @@ void InscriureConcursant(const vector<Personatge>& pers , const vector<Vehicle>&
 void MoureVehicle(int &nConcursantsGuanyadors)
 {
 	if (not Cursa::GetInstance()->HiHaParticipants()) {
-		cout << "No hi ha Participants a la cursa" << endl;
+		cout << "No hi ha Participants a la cursa" << endl << endl;
 		return;
 	}
 
