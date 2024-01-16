@@ -41,8 +41,8 @@ public:
 	bool HiHaColisio(const Punt2D& p, shared_ptr<Vehicle>& colisionat) const;
 	vector <Punt2D> GetMeta() const;
 	int GetVoltes() const;
+	map<string, Concursant> GetParticipants() const;
 	void MostraConcursants() const;
-	void MostraClassificacio() const;
 
 };
 

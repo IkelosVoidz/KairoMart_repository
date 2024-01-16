@@ -29,6 +29,8 @@ public:
 	Punt2D GetPosicio() const;
 	shared_ptr<Vehicle> GetVehicle() const;
 	shared_ptr<Personatge> GetPersonatge() const;
+	int GetClassificatCursa() const;
+	void SetClassificacioCursa(int classificacioCursa);
 	void SeleccionarVehicle(shared_ptr<Vehicle> vec);
 	void SeleccionarPersonatge(shared_ptr<Personatge> pers);
 	bool EstaPenalitzat();
@@ -41,6 +43,7 @@ private:
 	int voltesFetes;
 	shared_ptr<Vehicle> vehicleSeleccionat;
 	shared_ptr<Personatge> personatgeSeleccionat;
+	int classificacioCursa;
 	shared_ptr<Accelerar> AccRecte;
 	shared_ptr<AccelerarDerrepant> AccDerr;
 	shared_ptr<AccelerarGirant> AccGir;
