@@ -20,6 +20,7 @@ void Cursa::AfegirConcursant(const Concursant& c)
 
 void Cursa::InicialitzarCircuit(const vector<vector<int>>& circ)
 {
+
 }
 
 bool Cursa::HiHaParticipants() const
@@ -49,4 +50,9 @@ bool Cursa::NoColisiona(const Punt2D& p, Vehicle *& colisionat) const
 	}
 
 	return colisiona;
+}
+
+vector<Punt2D> Cursa::GetMeta() const
+{
+	return meta;
 }

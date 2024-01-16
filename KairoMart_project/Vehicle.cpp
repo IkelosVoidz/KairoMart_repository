@@ -12,6 +12,7 @@ Vehicle::Vehicle() {
 	direccio = Punt2D();
 	penalitzatPerXoc = false;
 	vehicleBehaviour = nullptr;
+	tornsRestantsPenalitzacio = 0;
 
 }
 Vehicle::Vehicle(const string& nom, int maxVel, int adherenci, int resistencia , int dirX , int dirY) {
@@ -23,6 +24,7 @@ Vehicle::Vehicle(const string& nom, int maxVel, int adherenci, int resistencia ,
 	direccio = Punt2D(dirX, dirY);
 	penalitzatPerXoc = false;
 	vehicleBehaviour = nullptr;
+	tornsRestantsPenalitzacio = 0;
 }
 
 Punt2D Vehicle::FesAccelerar(const Punt2D& dir, const Punt2D& pos)

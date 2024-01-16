@@ -1,4 +1,5 @@
 #include "Concursant.h"
+#include "Cursa.h"
 Concursant::Concursant() {
 	id = 0;
 	nom = " ";
@@ -26,6 +27,7 @@ Concursant::~Concursant()
 void Concursant::Conduir(const Punt2D& dir)
 {
 	Punt2D newPos = vehicleSeleccionat->FesAccelerar(dir, posicio);
+	Cursa* instance = Cursa::GetInstance();
 
 	if (newPos.es_igual(Punt2D())) {
 		
@@ -35,7 +37,10 @@ void Concursant::Conduir(const Punt2D& dir)
 	else {
 		posicio = newPos;
 
-		//mirar si ha creuat de volta
+		//mirar si ha creuat de volta, 
+		// si ha creuat sumar voltes 
+		// i mirar si ha arribat a les voltes finals 
+		// i indicar de alguna forma que ha acabat la carrera
 	}
 }
 

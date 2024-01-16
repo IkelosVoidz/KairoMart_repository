@@ -19,6 +19,8 @@ private:
 	map<Punt2D,Concursant> participants;
 	vector <vector<int>> circuit; //0 es circuit 1 es limit
 	vector <Punt2D> casellesInicials;
+	vector<Punt2D> meta;
+	
 	
 public:
 
@@ -31,5 +33,7 @@ public:
 	void MostrarCircuit() const;
 	bool EsTransitable(const Punt2D& p ) const;
 	bool NoColisiona(const Punt2D& p, Vehicle*& colisionat) const;
+	vector <Punt2D> GetMeta() const;
+
 };
 
