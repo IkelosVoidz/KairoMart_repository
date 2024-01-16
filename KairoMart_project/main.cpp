@@ -14,7 +14,7 @@ using namespace std;
 
 int IniciCursa();
 void InscriureConcursant(const vector<Personatge>& pers, const vector<Vehicle>& vec);
-void MoureVehicle();
+void MoureVehicle(int& nConcursantsGuanyadors);
 void MostrarClassificacio();
 
 int main() 
@@ -24,14 +24,17 @@ int main()
 	vector<Personatge> characters;
 	vector<Vehicle> vehicles;
 
+	int nConcursantsGuanyadors = 0;
+
+
 	characters.push_back(Personatge("Mario"));
 	characters.push_back(Personatge("Luigi"));
 	characters.push_back(Personatge("Peach"));
 	characters.push_back(Personatge("Bowser"));
 
-	vehicles.push_back(Cavall("Cavall(Rocinante)", 1,0,2));
-	vehicles.push_back(Bigue("Bigue(Motorola)", 2,0,1));
-	vehicles.push_back(Quadrigue("Quadrigue(RayoMcQueen)", 3,0,1));
+	vehicles.push_back(Cavall("Cavall(Rocinante)", 2,0,2));
+	vehicles.push_back(Bigue("Bigue(Motorola)", 3,0,1));
+	vehicles.push_back(Quadrigue("Quadrigue(RayoMcQueen)", 4,0,1));
 
 
 	bool fi = false;
@@ -45,16 +48,13 @@ int main()
 	cout << "Escull Opcio: "; cin >> opcio;
 
 	while (not fi) {
-		
-		
-
 		switch (opcio)
 		{
 		case 1:
 			InscriureConcursant(characters, vehicles);
 			break;
 		case 2:
-			MoureVehicle();
+			MoureVehicle(nConcursantsGuanyadors);
 			break;
 		case 3:
 			MostrarClassificacio();
@@ -68,11 +68,13 @@ int main()
 		}
 
 
-		cout << "1- Inscriure Concursant" << endl;
-		cout << "2- Moure Vehicle a la Cursa" << endl;
-		cout << "3- Mostrar situacio actual Cursa" << endl;
-		cout << "0- Sortir Programa" << endl;
-		cout << "Escull Opcio: "; cin >> opcio;
+		if (!fi) {
+			cout << "1- Inscriure Concursant" << endl;
+			cout << "2- Moure Vehicle a la Cursa" << endl;
+			cout << "3- Mostrar situacio actual Cursa" << endl;
+			cout << "0- Sortir Programa" << endl;
+			cout << "Escull Opcio: "; cin >> opcio;
+		}
 	}
 	return 0;
 }
@@ -83,7 +85,6 @@ void InscriureConcursant(const vector<Personatge>& pers , const vector<Vehicle>&
 	cout << "Introdueix dades nou Concursant" << endl;
 	cout << "Nom: ";
 	cin >> nom;
-	Cursa::GetInstance()->MostrarCircuit();
 
 	//pos , dir
 	pair<Punt2D,Punt2D> start = Cursa::GetInstance()->GetAvaliableStartPosAndDirection();
@@ -131,7 +132,7 @@ void InscriureConcursant(const vector<Personatge>& pers , const vector<Vehicle>&
 	Cursa::GetInstance()->MostrarCircuit();
 }
 
-void MoureVehicle() 
+void MoureVehicle(int &nConcursantsGuanyadors)
 {
 	if (not Cursa::GetInstance()->HiHaParticipants()) {
 		cout << "No hi ha Participants a la cursa" << endl;
@@ -192,15 +193,36 @@ void MoureVehicle()
 
 	c->Conduir(dirNova);
 	Cursa::GetInstance()->MostrarCircuit(c->GetPosicio());
+
+	// mirar si ha acabat la carrera
+	if (c->GetVoltesFetes() >= Cursa::GetInstance()->GetVoltes()) {
+		nConcursantsGuanyadors++;
+		cout << endl << "EL CONCURSANT " << c->GetNom() << " HA ACABAT LA CARRERA!" << endl << endl;
+		c->SetClassificacioCursa(nConcursantsGuanyadors);
+	}
 }
+
 
 void MostrarClassificacio() {
 	if (not Cursa::GetInstance()->HiHaParticipants()) {
-		cout << "No hi ha Participants a la cursa" << endl;
+		cout << "No hi ha Participants a la cursa" << endl << endl;
 		return;
 	}
 
-	Cursa::GetInstance()->MostraClassificacio();
+	cout << "-------------------- CLASSIFICACIO --------------------" << endl;
+
+	int i = 0;
+	for (auto it : Cursa::GetInstance()->GetParticipants()) {
+		cout << i << "- " << it.second.GetNom() << ": POSICIO:" << it.second.GetPosicio() << ", VOLTES: " << it.second.GetVoltesFetes();
+		
+		if (it.second.GetClassificatCursa() != -1) cout << ", CLASSIFICACIO: " << it.second.GetClassificatCursa();
+
+		cout << endl;
+		i++;
+	}
+
+	cout << "-------------------------------------------------------" << endl;
+	cout << endl;
 }
 int IniciCursa() {
 

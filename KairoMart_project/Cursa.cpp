@@ -107,6 +107,10 @@ void Cursa::MostrarCircuit() const
 		}
 	}
 
+	for (int i = 0; i < meta.size(); i++) {
+		circuitMostrar[meta[i].get_x()][meta[i].get_y()] = "2";
+	}
+
 	int i = 0;
 	for (auto it : participants) {
 
@@ -145,6 +149,10 @@ void Cursa::MostrarCircuit(const Punt2D& jugadorConcret) const
 			circuitMostrar[x][y] = to_string(circuit[x][y]);
 			//cout << setfill('0') << setw(2) << circuitMostrar[x][y];
 		}
+	}
+
+	for (int i = 0; i < meta.size(); i++) {
+		circuitMostrar[meta[i].get_x()][meta[i].get_y()] = "2";
 	}
 
 	int i = 0;
@@ -201,6 +209,10 @@ int Cursa::GetVoltes() const
 	return voltes;
 }
 
+map<string, Concursant> Cursa::GetParticipants() const {
+	return participants;
+}
+
 void Cursa::MostraConcursants() const
 {
 	int i = 0;
@@ -208,17 +220,6 @@ void Cursa::MostraConcursants() const
 		cout << "CONCURSANT " << i << " (" << it.second.GetNom() << " , " 
 			<< it.second.GetVehicle()->GetNomVehicle() << " , " 
 			<< it.second.GetPersonatge()->GetNom() << ")" << endl;
-		i++;
-	}
-}
-
-void Cursa::MostraClassificacio() const
-{
-	int i = 0;
-	for (auto it : participants) {
-		cout << i << "- " << it.second.GetNom() 
-			<< ": POSICIO:" << it.second.GetPosicio() 
-			<< ", VOLTES: " << it.second.GetVoltesFetes() << endl;
 		i++;
 	}
 }

@@ -4,9 +4,10 @@ Concursant::Concursant() {
 	id = 0;
 	nom = " ";
 	posicio = Punt2D();
-	voltesFetes = 0;
+	voltesFetes = -1;
 	personatgeSeleccionat = nullptr;
 	vehicleSeleccionat = nullptr;
+	classificacioCursa = -1;
 	AccRecte = make_shared<Accelerar>(Accelerar());
 	AccDerr = make_shared<AccelerarDerrepant>(AccelerarDerrepant());
 	AccGir = make_shared<AccelerarGirant>(AccelerarGirant());
@@ -16,9 +17,10 @@ Concursant::Concursant(const string& n)
 	nom = n;
 	id = 0;
 	posicio = Punt2D();
-	voltesFetes = 0;
+	voltesFetes = -1;
 	personatgeSeleccionat = nullptr;
 	vehicleSeleccionat = nullptr;
+	classificacioCursa = -1;
 	AccRecte = make_shared<Accelerar>(Accelerar());
 	AccDerr = make_shared<AccelerarDerrepant>(AccelerarDerrepant());
 	AccGir = make_shared<AccelerarGirant>(AccelerarGirant());
@@ -27,9 +29,10 @@ Concursant::Concursant(const string& _nom, int _id, const Punt2D& pos) {
 	id = _id;
 	nom = _nom;
 	posicio = pos;
-	voltesFetes = 0;
+	voltesFetes = -1;
 	personatgeSeleccionat = nullptr;
 	vehicleSeleccionat = nullptr;
+	classificacioCursa = -1;
 	AccRecte = make_shared<Accelerar>(Accelerar());
 	AccDerr = make_shared<AccelerarDerrepant>(AccelerarDerrepant());
 	AccGir = make_shared<AccelerarGirant>(AccelerarGirant());
@@ -48,6 +51,7 @@ Concursant& Concursant::operator=(const Concursant& other)
 	voltesFetes = other.voltesFetes;
 	vehicleSeleccionat = other.vehicleSeleccionat;
 	personatgeSeleccionat = other.personatgeSeleccionat;
+	classificacioCursa = other.classificacioCursa;
 	AccRecte = other.AccRecte;
 	AccDerr = other.AccDerr;
 	AccGir = other.AccGir;
@@ -98,19 +102,14 @@ void Concursant::Conduir(const Punt2D& dir)
 
 		cout << "Voltes fetes abans de calcular: " << voltesFetes << endl;
 
-		if (newPos.get_x() >= meta[0].get_x() and posicio.get_x() < meta[0].get_x()) {
+		if (newPos.get_x() >= meta[0].get_x() and posicio.get_x() < meta[0].get_x() and posicio.get_y() >= 11) {
 			voltesFetes++;
 		}
-		else if (newPos.get_x() < meta[0].get_x() and posicio.get_x() >= meta[0].get_x()) {
+		else if (newPos.get_x() < meta[0].get_x() and posicio.get_x() >= meta[0].get_x() and posicio.get_y() >= 11) {
 			voltesFetes--;
 		}
 
 		cout << "Voltes fetes despres de calcular: " << voltesFetes << endl;
-
-		// mirar si ha acabat la carrera
-		if (voltesFetes >= instanciaCursa->GetVoltes()) {
-			cout << "He acabado la carrera hehe";
-		}
 
 		posicio = newPos;
 	}
@@ -144,6 +143,14 @@ shared_ptr<Vehicle> Concursant::GetVehicle() const
 shared_ptr<Personatge> Concursant::GetPersonatge() const
 {
 	return personatgeSeleccionat;
+}
+
+int Concursant::GetClassificatCursa() const {
+	return classificacioCursa;
+}
+
+void Concursant::SetClassificacioCursa(int novaClassificacioCursa) {
+	classificacioCursa = novaClassificacioCursa;
 }
 
 void Concursant::SeleccionarVehicle(shared_ptr<Vehicle> vec)
